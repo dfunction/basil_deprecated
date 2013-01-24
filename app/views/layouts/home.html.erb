@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>deltaFunction</title>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    "home", :media => "all" %>
+  <script src="https://raw.github.com/mrdoob/three.js/master/build/three.js"></script>
+  <%= javascript_include_tag "home" %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, maximum-scale=1.0, min-width=960">
+</head>
+<body onload="init();">
+
+<%= yield %>
+
+</body>
+</html>

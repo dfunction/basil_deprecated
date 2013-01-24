@@ -1,0 +1,80 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+//= require reset
+
+body {
+	font-family: "Open Sans";
+	-webkit-font-smoothing: antialiased;
+	background-color: #ededed;
+}
+
+#top {
+	background: white;
+	
+	//TODO: Tweak shadow
+	-mox-box-shadow: 0 0px 5px #ccc;
+	-webkit-box-shadow: 0 0px 5px #ccc;
+	box-shadow: 0 0px 5px #ccc;
+
+}
+
+#topWrapper {
+	width: 940px;
+	padding: 20px 10px 0 10px;
+	margin: auto;
+}
+
+#header {
+}
+
+#logo {
+	display: inline;
+}
+
+#navigation {
+	float: right;
+	
+	.navigationLink {
+		display: table-cell;
+		height: 42px;
+		padding-left: 35px;
+		vertical-align: middle;
+		font-size: 14px;
+		font-weight: 700;
+		
+		a {
+			color: #333;
+			text-decoration: none;
+			
+			&:hover {
+				border-bottom: 2px solid #666;
+			}
+			
+			&:active {
+				border-bottom: 2px solid #333;
+			}
+		}
+	}
+}
+
+#slogan {
+	font-size: 80px;
+	font-weight: 800;
+	width: 725px;
+	line-height: 100px;
+	margin-top: 100px;
+}
+
+#vectorField {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	height: 330px;
+	
+	canvas {
+		position:absolute;
+		left: 50%;
+		margin-left: -900px;
+	}
+}
