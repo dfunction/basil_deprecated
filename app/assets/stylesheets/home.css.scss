@@ -11,7 +11,7 @@ body {
 
 #top {
 	background: white;
-	
+
 	//TODO: Tweak shadow
 	-mox-box-shadow: 0 0px 5px #ccc;
 	-webkit-box-shadow: 0 0px 5px #ccc;
@@ -34,7 +34,7 @@ body {
 
 #navigation {
 	float: right;
-	
+
 	.navigationLink {
 		display: table-cell;
 		height: 42px;
@@ -42,15 +42,15 @@ body {
 		vertical-align: middle;
 		font-size: 14px;
 		font-weight: 700;
-		
+
 		a {
 			color: #333;
 			text-decoration: none;
-			
+
 			&:hover {
 				border-bottom: 2px solid #666;
 			}
-			
+
 			&:active {
 				border-bottom: 2px solid #333;
 			}
@@ -71,10 +71,38 @@ body {
 	overflow: hidden;
 	position: relative;
 	height: 330px;
-	
+
 	canvas {
 		position:absolute;
 		left: 50%;
 		margin-left: -900px;
 	}
+}
+
+#team {
+	width: 940px;
+	padding: 20px 10px 0 10px;
+	margin: auto;
+
+    #teamHeader {
+        padding: 40px 0 50px 0;
+
+        .title {
+            background-color: #ededed;
+            color: #999;
+            font-size: 18px;
+            font-weight: 700;
+            text-align: center;
+            position: relative;
+            margin: auto;
+            width: 150px;
+        }
+
+        .nop {
+            content: "";
+            display: block;
+            margin-top: -12px;
+            border-top: 1px solid lighten(#999,20%);
+        }
+    }
 }
