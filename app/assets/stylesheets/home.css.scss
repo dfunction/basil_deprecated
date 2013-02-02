@@ -55,6 +55,8 @@ body {
 }
 
 #slogan {
+	position: relative;
+	z-index: 50;
     font-size: 80px;
     font-weight: 800;
     width: 725px;
@@ -64,16 +66,20 @@ body {
 }
 
 #vectorField {
-    width: 100%;
     overflow: hidden;
     position: relative;
-    height: 330px;
+	height: 330px;
 
     canvas {
         position:absolute;
         left: 50%;
         margin-left: -900px;
     }
+}
+
+.cell {
+	@include borderBox;
+	position: absolute;
 }
 
 #team {
