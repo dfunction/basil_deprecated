@@ -3,7 +3,7 @@ var $el;
     
 function init() {
 	var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
-	if (is_chrome) {
+	if (false) {
 		$("#vectorField").css({
 			"width":"100%"
 		});
@@ -15,7 +15,7 @@ function init() {
 	} else {
 		$("#vectorField").css({
 			"width":"960px",
-			"height":"430px",
+			"height":"630px",
 			"margin":"-300px auto 0 auto"
 		});
 		initGame();
@@ -25,7 +25,7 @@ function init() {
 // Game of life
 var initGame = function() {
     var $cradle = $("#vectorField");
-    var matrixWidth = 20;
+    var matrixWidth = 15;
     var matrixHeight = 10;
     var wScale = $cradle.width() / matrixWidth;
     var hScale = $cradle.height() / matrixHeight;
@@ -59,7 +59,7 @@ var initGame = function() {
         }
     }
     
-    setInterval(function() {update(matrix, $elMatrix, matrixWidth, matrixHeight);}, 100);
+    setInterval(function() {update(matrix, $elMatrix, matrixWidth, matrixHeight);}, 200);
     
 }
 
@@ -156,9 +156,22 @@ var countNeighbors = function(i, j, matrix, matrixWidth, matrixHeight) {
 var render = function(matrix, $elMatrix, matrixWidth, matrixHeight) {
     for( var i = 0; i < matrixHeight; i++) {
         for( var j = 0; j < matrixWidth; j++) {
+			/*
             (matrix[i][j] == 1) ?
-                $($elMatrix[i][j]).css("background-color", "#eee") :
+                $($elMatrix[i][j]).css("background-color", "rgba(0," + Math.floor(255 * Math.random()) + ",130,.35)") :
                 $($elMatrix[i][j]).css("background-color", "white");
+			*/
+			if (matrix[i][j] == 1) {
+				$($elMatrix[i][j]).stop();
+				$($elMatrix[i][j]).css({"background-color":"rgba(0," + Math.floor(255 * Math.random()) + ",130,.35)",
+										"opacity":"1"});
+				//$($elMatrix[i][j]).stop().animate({"opacity":"1"}, 200);
+			} else {
+				//$($elMatrix[i][j]).css("background-color", "white");
+				//$($elMatrix[i][j]).stop();
+				//$($elMatrix[i][j]).css("opacity", "0");
+				$($elMatrix[i][j]).stop().animate({"opacity":"0"}, 200);
+			}
         }
     }
 }
