@@ -1,5 +1,26 @@
 var geometry;
 var $el;
+
+function Timer(name){
+	this.name = name;
+	this.startTime = 0;
+	this.stopTime = 0;
+	this.start = function() {
+		this.startTime = Date.now();
+		return this;
+	};
+	this.stop = function() {
+		if (this.startTime != 0) {
+			this.stopTime = Date.now();
+			console.log(this.name + " runtime: " + (this.stopTime - this.startTime) + "ms");
+			return true;
+		} else {
+			console.warn(this.name + " not stopped");
+			return false;
+		}
+		
+	};
+}
     
 function init() {
 	var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
@@ -25,8 +46,8 @@ function init() {
 // Game of life
 var initGame = function() {
     var $cradle = $("#vectorField");
-    var matrixWidth = 15;
-    var matrixHeight = 10;
+    var matrixWidth = 30;
+    var matrixHeight = 20;
     var wScale = $cradle.width() / matrixWidth;
     var hScale = $cradle.height() / matrixHeight;
     var matrix = new Array(matrixHeight);
@@ -46,6 +67,8 @@ var initGame = function() {
         $elMatrix[i] = new Array(matrixWidth);   
     }
     
+	var populate$elTimer = (new Timer("Populate $elMatrix")).start();
+	
     // Populate $elMatrix
     for( var i = 0; i < matrixHeight; i++) {
         for( var j = 0; j < matrixWidth; j++) {
@@ -58,17 +81,22 @@ var initGame = function() {
             
         }
     }
+	populate$elTimer.stop();
+	
+	
     
-    setInterval(function() {update(matrix, $elMatrix, matrixWidth, matrixHeight);}, 200);
+    setInterval(function() {update(matrix, $elMatrix, matrixWidth, matrixHeight);}, 50);
     
 }
 
 var popuplateMatrix = function(matrix, matrixWidth, matrixHeight) {
+	var populateMatrixTimer = (new Timer("Populate Matrix")).start();
     for( var i = 0; i < matrixHeight; i++) {
         for( var j = 0; j < matrixWidth; j++) {
             (Math.random() > .5) ? matrix[i][j] = 1 : matrix[i][j] = 0;
         }
-    }    
+    }
+	populateMatrixTimer.stop();
 }
 
 var update = function(matrix, $elMatrix, matrixWidth, matrixHeight) {
@@ -154,6 +182,7 @@ var countNeighbors = function(i, j, matrix, matrixWidth, matrixHeight) {
 }
 
 var render = function(matrix, $elMatrix, matrixWidth, matrixHeight) {
+	var renderTimer = (new Timer("Renderer")).start();
     for( var i = 0; i < matrixHeight; i++) {
         for( var j = 0; j < matrixWidth; j++) {
 			/*
@@ -162,18 +191,19 @@ var render = function(matrix, $elMatrix, matrixWidth, matrixHeight) {
                 $($elMatrix[i][j]).css("background-color", "white");
 			*/
 			if (matrix[i][j] == 1) {
-				$($elMatrix[i][j]).stop();
+				//$($elMatrix[i][j]).stop();
 				$($elMatrix[i][j]).css({"background-color":"rgba(0," + Math.floor(255 * Math.random()) + ",130,.35)",
 										"opacity":"1"});
 				//$($elMatrix[i][j]).stop().animate({"opacity":"1"}, 200);
 			} else {
-				//$($elMatrix[i][j]).css("background-color", "white");
+				$($elMatrix[i][j]).css("background-color", "white");
 				//$($elMatrix[i][j]).stop();
 				//$($elMatrix[i][j]).css("opacity", "0");
-				$($elMatrix[i][j]).stop().animate({"opacity":"0"}, 200);
+				//$($elMatrix[i][j]).stop().animate({"opacity":"0"}, 200);
 			}
         }
     }
+	renderTimer.stop();
 }
 
 
