@@ -1,0 +1,16 @@
+#heroTextContainer {
+	position: relative;
+}
+#heroText {
+	position: absolute;
+	width: 650px;
+	left: 50%;
+	top: 50%;
+	margin-top: -80px;
+	margin-left: -325px;
+	font-size: 72px;
+	text-align: center;
+	line-height: 80px;
+	font-weight: 700;
+	color: red;
+}

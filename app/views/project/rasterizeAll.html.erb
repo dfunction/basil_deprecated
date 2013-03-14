@@ -1,0 +1,7 @@
+<%= stylesheet_link_tag "projects" %>
+<%= javascript_include_tag "project" %>
+<div id="projectTiles" class="clearFix">
+	<% Project.all().each do |project| %>
+	<div class="projectTile"><%= project.title %></div>
+	<% end%>
+</div>

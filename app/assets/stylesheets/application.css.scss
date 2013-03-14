@@ -1,0 +1,80 @@
+/*
+ *= require normalize
+ */
+
+$darkGrey: #cccccc;
+$lightBlack: #333333;
+@mixin antialias {
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Clear Fix */
+/* For modern browsers */
+.clearFix:before,
+.clearFix:after {
+    content:"";
+    display:table;
+}
+.clearFix:after {
+    clear:both;
+}
+/* For IE 6/7 (trigger hasLayout) */
+.clearFix {
+    zoom:1;
+}
+
+/* Main styles */
+
+body {
+	font-family: "Open Sans";
+	min-width: 960px;
+}
+
+#header {
+	width: 960px;
+	height: 42px;
+	margin: 35px auto 20px auto;
+
+	img {
+		margin-left: 15px;
+	}
+}
+
+#nav {
+	height: 42px;
+	float: right;
+	display: inline-block;
+}
+
+.navItem {
+	display: inline-block;
+	line-height: 42px;
+	margin: 0 15px;
+	color: $lightBlack;
+	font-size: 14px;
+	font-weight: 700;
+	@include antialias;
+
+
+	a {
+		text-decoration: none;
+		color: inherit;
+
+
+		&:hover {
+			border-bottom: 2px solid $darkGrey;
+		}
+
+	}
+}
+
+#footer {
+	font-size: 12px;
+	color: $lightBlack;
+	font-weight: 300;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	width: 100%;
+	text-align: center;
+}
+
