@@ -2,6 +2,12 @@
 <%= javascript_include_tag "project" %>
 <div id="projectTiles" class="clearFix">
 	<% Project.all().each do |project| %>
-	<div class="projectTile"><%= project.title %></div>
+	<div class="projectTile">
+		<img class="tileImage" src="http://placehold.it/250x250">
+		<div class="tileInfo">
+			<div class="tileTitle"><%= project.title %></div>
+			<div class="tileShortDescription"><%= project.shortDescription %></div>
+		</div>
+	</div>
 	<% end%>
 </div>
