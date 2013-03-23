@@ -3,7 +3,8 @@ $(function() {
 	var footerHeight = $("#footer").outerHeight(true);
 
 	$(window).resize(function() {
-	    $("#heroTextContainer").height($(window).height() - headerHeight - footerHeight);
+		var calculatedHeight = $(window).height() - headerHeight - footerHeight;
+	    $("#heroTextContainer").height((calculatedHeight < $("#heroText").height() ? $("#heroText").height() : calculatedHeight));
 		return;
 	});
 
@@ -11,6 +12,3 @@ $(function() {
 
 	return;
 });
-
-
-

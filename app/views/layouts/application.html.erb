@@ -7,17 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div id="header">
-		<a href="/"><img width=144 height=42 src="<%= asset_path 'logo.png' %>" /></a>
-		<div id="nav">
-			<div class="navItem"><a href="/projects">PROJECTS</a></div>
-			<div class="navItem"><a href="/blog">BLOG</a></div>
-			<div class="navItem"><a href="/contact">CONTACT</a></div>
+	<div id="wrapper">
+		<div id="header">
+			<a href="/"><img width=144 height=42 src="<%= asset_path 'logo.png' %>" /></a>
+			<div id="nav">
+				<div class="navItem"><a href="/projects">PROJECTS</a></div>
+				<div class="navItem"><a href="/blog">BLOG</a></div>
+				<div class="navItem"><a href="/contact">CONTACT</a></div>
+			</div>
 		</div>
+
+		<div id="content">
+			<%= yield %>
+		</div>
+
+		<div id="footer">c. 2013</div>
 	</div>
-
-	<%= yield %>
-
-	<div id="footer">c. 2013</div>
 </body>
 </html>

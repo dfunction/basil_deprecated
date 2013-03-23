@@ -21,16 +21,23 @@
 
 /* Main styles */
 
-body {
+html, body {
 	font-family: "Open Sans";
 	min-width: 960px;
 	overflow-x: hidden;
+	height: 100%;
+}
+
+#wrapper {
+	min-height: 100%;
+	position: relative;
 }
 
 #header {
 	width: 960px;
 	height: 42px;
-	margin: 35px auto 20px auto;
+	padding: 35px 0 20px 0;
+	margin: 0 auto 0 auto;
 
 	img {
 		margin-left: 15px;
@@ -65,12 +72,19 @@ body {
 	}
 }
 
+#content {
+	padding: 0px;
+	padding-bottom: 50px;
+}
+
 #footer {
-	font-size: 12px;
+	font-size: 10px;
+	line-height: 50px;
 	color: $lightBlack;
 	font-weight: 300;
-	margin-top: 15px;
-	margin-bottom: 15px;
+	position: absolute;
+	bottom: 0;
+	height: 50px;
 	width: 100%;
 	text-align: center;
 }

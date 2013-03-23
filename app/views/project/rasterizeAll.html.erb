@@ -3,13 +3,13 @@
 <div id="projectTiles" class="clearFix">
 	<% Project.all().each do |project| %>
 	<%
-	#pictures = project.project_picture
 	if (thumb = project.project_picture.where(:is_thumb => true)).length > 0
 		@thumbURL = thumb[0].url
 	else
 		@thumbURL = "http://placehold.it/250x250"
 	end
 	%>
+	<a href="/projects/<%= project.id %>">
 	<div class="projectTile">
 		<img class="tileImage" src="<%= @thumbURL %>">
 		<div class="tileInfo">
@@ -17,5 +17,6 @@
 			<div class="tileShortDescription"><%= project.shortDescription %></div>
 		</div>
 	</div>
+	</a>
 	<% end%>
 </div>
