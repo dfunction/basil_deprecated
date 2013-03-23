@@ -1,0 +1,10 @@
+$darkGrey: #cccccc;
+$lightBlack: #333333;
+@mixin antialias {
+	-webkit-font-smoothing: antialiased;
+}
+@mixin borderbox {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box; /* Firefox */
+	-webkit-box-sizing: border-box; /* Safari */
+}

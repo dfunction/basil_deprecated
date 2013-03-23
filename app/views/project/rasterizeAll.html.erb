@@ -2,8 +2,16 @@
 <%= javascript_include_tag "project" %>
 <div id="projectTiles" class="clearFix">
 	<% Project.all().each do |project| %>
+	<%
+	#pictures = project.project_picture
+	if (thumb = project.project_picture.where(:is_thumb => true)).length > 0
+		@thumbURL = thumb[0].url
+	else
+		@thumbURL = "http://placehold.it/250x250"
+	end
+	%>
 	<div class="projectTile">
-		<img class="tileImage" src="http://placehold.it/250x250">
+		<img class="tileImage" src="<%= @thumbURL %>">
 		<div class="tileInfo">
 			<div class="tileTitle"><%= project.title %></div>
 			<div class="tileShortDescription"><%= project.shortDescription %></div>
