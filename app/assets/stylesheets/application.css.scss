@@ -2,11 +2,7 @@
  *= require normalize
  */
 
-$darkGrey: #cccccc;
-$lightBlack: #333333;
-@mixin antialias {
-	-webkit-font-smoothing: antialiased;
-}
+@import "mixins";
 
 /* Clear Fix */
 /* For modern browsers */
