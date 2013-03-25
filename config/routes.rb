@@ -4,6 +4,7 @@ Basil::Application.routes.draw do
 
   root :to => 'home#rasterize'
   match "/projects" => "project#rasterizeAll"
+  match "/projects/:id" => "project#rasterizeOne"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
