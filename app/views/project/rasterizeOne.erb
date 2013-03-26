@@ -1,2 +1,23 @@
 <%= stylesheet_link_tag "projects" %>
-<%= @project.title %>
+
+<div class="decorationOuter"></div>
+<div class="projectBox">
+	<div class="decorationInner"></div>
+	<div class="projectHeader">
+		<div class="projectTitle"><%= @project.title %></div>
+		<div class="projectYear">(<%= @project.year %>)</div>
+	</div>
+	<div class="projectDetails clearFix">
+		<div class="detailImage"><img src="http://placehold.it/600x400" /></div>
+		<div class="detailsCol">
+			<div class="detail" id="detailDescription">
+				<div class="detailTitle">Description</div>
+				<div class="detailText"><%= @project.longDescription %></div>
+			</div>
+			<div class="detail" id="detailTechnologies">
+				<div class="detailTitle">Technologies</div>
+				<div class="detailText"><%= @project.technologies %></div>
+			</div>
+		</div>
+	</div>
+</div>

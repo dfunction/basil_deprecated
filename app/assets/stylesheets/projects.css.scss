@@ -47,3 +47,89 @@ $tileBorder: 30px;
 	bottom: $tileBorder;
 	width: 250px -  2*$tileBorder;
 }
+
+
+// Project Page
+
+.decorationOuter {
+	width: 50%;
+	height: 20px;
+	background: red;
+	position: absolute;
+}
+
+.decorationInner {
+	width: 690px;
+	height: 20px;
+	background: red;
+}
+
+.projectBox {
+	background: white;
+	width: 960px;
+	margin: 0 auto;
+}
+
+.projectTitle {
+	font-size: 30px;
+	font-weight: 300;
+	line-height: 120px;
+	height: 120px;
+	display: inline-block;
+	@include antialias;
+}
+
+.projectYear {
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 120px;
+	height: 120px;
+	display: inline-block;
+	@include antialias;
+}
+
+.projectDetails {
+	color: white;
+	display: inline;
+	@include antialias;
+}
+
+.detailsCol {
+	width: 360px;
+	height: 400px;
+	float: left;
+}
+
+.detail {
+	width: 360px;
+	padding: $tileBorder;
+	position: relative;
+	@include borderbox;
+}
+
+.detailTitle {
+	font-size: 18px;
+}
+
+.detailText {
+	font-size: 14px;
+	position: absolute;
+	bottom: $tileBorder;
+	width: 360px -  2*$tileBorder;
+}
+
+.detailImage {
+	width: 600px;
+	height: 400px;
+	float: left;
+}
+
+#detailDescription {
+	background: $darkAqua;
+	height: 225px;
+}
+
+#detailTechnologies {
+	background: $lightBlack;
+	height: 175px;
+}
