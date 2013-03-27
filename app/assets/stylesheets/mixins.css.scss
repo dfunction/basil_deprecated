@@ -9,3 +9,10 @@ $darkAqua: #339999;
 	-moz-box-sizing: border-box; /* Firefox */
 	-webkit-box-sizing: border-box; /* Safari */
 }
+@mixin rounded-corners($rad:10px) {
+	-moz-border-radius: $rad;
+	-webkit-border-radius: $rad;
+	-o-border-radius: $rad;
+	-ms-border-radius: $rad;
+	border-radius: $rad;
+}

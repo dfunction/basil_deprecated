@@ -1,0 +1,81 @@
+@import "mixins";
+
+#newProject {
+	margin: 0 auto;
+	//padding: 20px;
+	width: 960px;
+	
+	@include borderbox;
+}
+
+.newProjectHeader {
+	font-size: 30px;
+	font-weight: 300;
+	line-height: 120px;
+	height: 120px;
+	
+	@include antialias;
+}
+
+label {
+	cursor: pointer;
+	display: block;
+	height: 32px;
+	line-height: 32px;
+	font-size: 14px;
+	width: 150px;
+	float: left;
+	margin-right: 20px;
+	color: $lightBlack;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: right;
+	
+	@include antialias;
+}
+
+input, textarea {
+	cursor: pointer;
+	display: block;
+	height: 32px;
+	width: 300px;
+	font-size: 14px;
+	margin-bottom: 20px;
+	border: none;
+	outline: none;
+	background: #f0f0f0;
+	color: $lightBlack;
+	padding: 7px;
+	
+	@include antialias;
+	@include rounded-corners(5px);
+	@include borderbox;
+	
+	&[type='reset'] {
+		margin-left: 20px + 150px;
+		background: red;
+		color: white;
+		width: 75px;
+		display: inline-block;
+		
+		&:hover {
+			background: $lightBlack;
+		}
+	}
+	
+	&[type='submit'] {
+		background: $darkAqua;
+		color: white;
+		width: 220px;
+		display: inline-block;
+		
+		&:hover {
+			background: $lightBlack;
+		}
+	}
+}
+
+textarea {
+	height: 100px;
+	width: 300px;
+}

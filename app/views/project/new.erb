@@ -1,0 +1,16 @@
+<%= stylesheet_link_tag "newProject" %>
+<%= javascript_include_tag "newProject" %>
+<div id="newProject">
+	<div class="newProjectHeader">New Project</div>
+	<form method="post">
+		<input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> />
+		<label for="title">Title</label><input type="text" id="title" maxlength="255" />
+		<label for="year">Year</label><input type="text" id="year" maxlength="4" />
+		<label for="shortDescription">Short Description</label><textarea id="shortDescription"></textarea>
+		<label for="longDescription">Long Description</label><textarea id="longDescription"></textarea>
+		<label for="technologies">Technologies</label><textarea id="technologies"></textarea>
+		
+		<input type="reset" value="Clear" />
+		<input type="submit" value="Create and add new project" />
+	</form>
+</div>

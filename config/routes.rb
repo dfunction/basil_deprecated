@@ -3,6 +3,7 @@ Basil::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   root :to => 'home#rasterize'
+  match "/projects/new" => "project#new"
   match "/projects" => "project#rasterizeAll"
   match "/projects/:id" => "project#rasterizeOne"
 
