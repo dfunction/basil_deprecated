@@ -25,12 +25,21 @@ function retrieveData(){
 	document.querySelector("#technologies").value = technologies;
 }
 
+function removeData() {
+	document.removeItem("title");
+	document.removeItem("year");
+	document.removeItem("shortDescription");
+	document.removeItem("longDescription");
+	document.removeItem("technologies");
+}
+
 function sendNewProject() {
-	
+	console.log("does nothing.");
 }
 
 $(function(){
 	retrieveData();
 	
 	var myInterval = setInterval(saveData, 5000);
+	$("input[type='reset']").click(removeData);
 });
