@@ -3,9 +3,10 @@ Basil::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   root :to => 'home#rasterize'
-  match "/projects/new" => "project#new"
-  match "/projects" => "project#rasterizeAll"
-  match "/projects/:id" => "project#rasterizeOne"
+  get "/projects/new" => "project#renderCreatePage"
+  post "projects/new" => "project#createAction"
+  match "/projects" => "project#renderAll"
+  match "/projects/:id" => "project#renderOne"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

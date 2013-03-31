@@ -1,9 +1,12 @@
 class ProjectController < ApplicationController
-  def rasterizeAll
-    render :rasterizeAll
+  def renderAll
+    render :renderAll
   end
-  def rasterizeOne
+  def renderOne
     @project = Project.find(params[:id])
-    render :rasterizeOne
+    render :renderOne
+  end
+  def renderCreatePage
+    render :createPage
   end
 end
