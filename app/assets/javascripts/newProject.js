@@ -28,7 +28,7 @@ function retrieveData(){
 }
 
 function removeData() {
-	localStorage.removeItem("title");	// XXX this method DNE
+	localStorage.removeItem("title");
 	localStorage.removeItem("year");
 	localStorage.removeItem("shortDescription");
 	localStorage.removeItem("longDescription");
