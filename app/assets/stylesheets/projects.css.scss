@@ -89,6 +89,7 @@ $tileBorder: 30px;
 	line-height: 120px;
 	height: 120px;
 	display: inline-block;
+	margin-left: 20px;	// alignment issues with the header
 	@include antialias;
 }
 
