@@ -1,3 +1,5 @@
+// TODO: save state before submission, then deleting it only upon success in receiving page
+
 function saveData() {
 	var title = $("#title").val();
 	var year = $("#year").val();
