@@ -70,6 +70,19 @@ $tileBorder: 30px;
 	margin: 0 auto;
 }
 
+.notification {
+	margin: 50px auto 0 auto;
+	height: 50px;
+	line-height: 50px;
+	font-size: 16px;
+	font-color: $darkAqua;
+	text-align: center;
+	border: 3px solid $darkAqua;
+	background: lighten($darkAqua, 50%);
+	cursor: pointer;
+	@include rounded-corners;
+}
+
 .projectTitle {
 	font-size: 30px;
 	font-weight: 300;

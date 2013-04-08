@@ -1,8 +1,11 @@
 <%= stylesheet_link_tag "projects" %>
-
+<%= javascript_include_tag "project" %>
 <div class="decorationOuter"></div>
 <div class="projectBox">
 	<div class="decorationInner"></div>
+	<div class="notification" style="display: <%= @result? 'block' : 'none' %>">
+		This project was successfully created.
+	</div>
 	<div class="projectHeader">
 		<div class="projectTitle"><%= @project.title %></div>
 		<div class="projectYear">(<%= @project.year %>)</div>
