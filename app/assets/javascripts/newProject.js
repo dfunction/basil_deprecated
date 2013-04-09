@@ -1,3 +1,5 @@
+// TODO: save state before submission, then deleting it only upon success in receiving page
+
 function saveData() {
 	var title = $("#title").val();
 	var year = $("#year").val();
@@ -26,11 +28,11 @@ function retrieveData(){
 }
 
 function removeData() {
-	document.removeItem("title");
-	document.removeItem("year");
-	document.removeItem("shortDescription");
-	document.removeItem("longDescription");
-	document.removeItem("technologies");
+	localStorage.removeItem("title");
+	localStorage.removeItem("year");
+	localStorage.removeItem("shortDescription");
+	localStorage.removeItem("longDescription");
+	localStorage.removeItem("technologies");
 }
 
 function sendNewProject() {
@@ -42,4 +44,5 @@ $(function(){
 	
 	var myInterval = setInterval(saveData, 5000);
 	$("input[type='reset']").click(removeData);
+	$("input[type='submit']").click(removeData);
 });
