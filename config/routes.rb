@@ -1,4 +1,6 @@
 Basil::Application.routes.draw do
+  get "thumbnails/createThumbnail"
+
   devise_for :users
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 

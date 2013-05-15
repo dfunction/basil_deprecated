@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+# Application Gems
+gem 'uuidtools'
+gem 'aws-sdk', '~> 1.0'
+# End Application Gems
+
 gem 'rails', '3.2.11'
 
 # Bundle edge Rails instead:
@@ -27,7 +32,6 @@ gem 'devise'
 
 gem 'fastercsv'
 gem 'rails_admin'
-gem 'aws-s3'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

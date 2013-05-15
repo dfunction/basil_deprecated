@@ -13,19 +13,41 @@ class ProjectController < ApplicationController
     render :createPage
   end
   def createAction
-    @project = Project.new({
+    ## Creates new project
+
+    # Generate new project
+    @project = Project.create({
       :title => params[:title],
       :year => params[:year],
       :shortDescription => params[:shortDescription],
       :longDescription => params[:longDescription],
       :technologies => params[:technologies]
     })
-    if @project.save
-      response = 'success'
-      redirect_to :action => "renderOne", :id => @project, :result => response
-    else
-      response = 'error'
-      render :json => response
+
+    if !@project
+      render :json => {:error => "Create project Error"}
+      return
     end
+
+    # Generate new thumbnail
+    @thumbnail = ProjectPicture.new({
+      :is_thumb => true,
+      :project => @project
+    })
+
+    @thumbnailUrl = @thumbnail.getS3Url(params[:thumbnail])
+    if @thumbnailUrl[:error]
+      render :json => {:error => @thumbnailUrl[:error]}
+      return
+    end
+
+    @thumbnail.url = @thumbnailUrl[:url]
+    if !@thumbnail.save
+      render :json => {:error => "Thumbnail save Error"}
+      return
+    end
+
+    render :json => {:response => "Success"}
+    return
   end
 end
