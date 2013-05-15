@@ -11,10 +11,8 @@
 		<label for="longDescription">Long Description</label><textarea name="longDescription" id="longDescription"></textarea>
 		<label for="technologies">Technologies</label><textarea name="technologies" id="technologies"></textarea>
 		<label for="thumbnail">Thumbnail</label><input multiple type="file" name="thumbnail" id="thumbnail"/>
+		<label for="images">Images</label><input multiple type="file" name="images[]" id="images"/>
 		<input type="reset" value="Clear" />
 		<input type="submit" value="Create and add new project" />
 	</form>
-	<%= form_tag({:action => :createAction}, :multipart => true) do %>
-	  <%= file_field_tag 'picture' %>
-	<% end %>
 </div>
