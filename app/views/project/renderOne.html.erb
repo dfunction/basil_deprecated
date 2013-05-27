@@ -11,7 +11,9 @@
 		<div class="projectYear">(<%= @project.year %>)</div>
 	</div>
 	<div class="projectDetails clearFix">
-		<div class="detailImage"><img src="http://placehold.it/600x400" /></div>
+		<% for @picture in @pictures %>
+		<div class="detailImage"><img src="<%= @picture.url %>" /></div>
+		<% end %>
 		<div class="detailsCol">
 			<div class="detail" id="detailDescription">
 				<div class="detailTitle">Description</div>

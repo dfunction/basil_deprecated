@@ -7,6 +7,7 @@ class ProjectController < ApplicationController
   def renderOne
     @project = Project.find(params[:id])
     @result = params[:result]
+    @pictures = @project.project_picture.where(:is_thumb => false)
     render :renderOne
   end
   def renderCreatePage

@@ -111,7 +111,8 @@ $tileBorder: 30px;
 .detailsCol {
 	width: 360px;
 	height: 400px;
-	float: left;
+	margin-left: 600px;
+	position: fixed;
 }
 
 .detail {
@@ -135,6 +136,8 @@ $tileBorder: 30px;
 .detailImage {
 	width: 600px;
 	height: 400px;
+	overflow: hidden;
+	margin-bottom: 100px;
 	float: left;
 }
 
