@@ -7,6 +7,7 @@ Basil::Application.routes.draw do
   root :to => 'home#rasterize'
   get "/projects/new" => "project#renderCreatePage"
   post "projects/new" => "project#createAction"
+  match "/contact"    => "contact#rasterize"
   match "/projects" => "project#renderAll"
   match "/projects/:id" => "project#renderOne"
 

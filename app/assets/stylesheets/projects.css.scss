@@ -13,6 +13,7 @@ $tileBorder: 30px;
 	height: 250px;
 	padding: 0;
 	background: grey;
+	overflow: hidden;
 
 	&:hover {
 		cursor: pointer;
@@ -26,7 +27,7 @@ $tileBorder: 30px;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: #ff3333;
+	background: $pinkLemonade;
 	color: #fff;
 	padding: $tileBorder;
 	@include borderbox;
@@ -50,19 +51,6 @@ $tileBorder: 30px;
 
 
 // Project Page
-
-.decorationOuter {
-	width: 50%;
-	height: 20px;
-	background: red;
-	position: absolute;
-}
-
-.decorationInner {
-	width: 690px;
-	height: 20px;
-	background: red;
-}
 
 .projectBox {
 	background: white;
@@ -142,7 +130,7 @@ $tileBorder: 30px;
 }
 
 #detailDescription {
-	background: $darkAqua;
+	background: $pinkLemonade;
 	height: 225px;
 }
 

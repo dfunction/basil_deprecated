@@ -1,6 +1,8 @@
 $darkGrey: #cccccc;
 $lightBlack: #333333;
 $darkAqua: #339999;
+$pinkLemonade: #ff3333;
+
 @mixin antialias {
 	-webkit-font-smoothing: antialiased;
 }
@@ -15,4 +17,19 @@ $darkAqua: #339999;
 	-o-border-radius: $rad;
 	-ms-border-radius: $rad;
 	border-radius: $rad;
+}
+
+@mixin placeholder-color($color) {
+	&::-webkit-input-placeholder { /* WebKit browsers */
+	    color:    $color;
+	}
+	&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	    color:    $color;
+	}
+	&::-moz-placeholder { /* Mozilla Firefox 19+ */
+	    color:    $color;
+	}
+	&:-ms-input-placeholder { /* Internet Explorer 10+ */
+	    color:    $color;
+	}
 }

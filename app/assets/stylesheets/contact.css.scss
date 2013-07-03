@@ -1,0 +1,49 @@
+@import "mixins";
+
+#contactBox {
+	margin: auto;
+	width: 360px;
+}
+
+input, textarea {
+	cursor: pointer;
+	display: block;
+	height: 32px;
+	width: 360px;
+	font-size: 14px;
+	margin-bottom: 0px;
+	border: none;
+	outline: none;
+	color: white;
+	padding: 30px;
+	font-size: 18px;
+
+	@include antialias;
+
+	&[type='submit'] {
+		background: white;
+		color: $lightBlack;
+		width: 400px;
+
+		&:hover {
+		}
+	}
+
+	&[name='email'] {
+		@include placeholder-color(white);
+		color: white;
+		background: $pinkLemonade;
+	}
+
+	&[name='message'] {
+		@include placeholder-color(white);
+		color: white;
+		width: 360px;
+		height: 200px;
+		background: $lightBlack;
+	}
+
+	&:focus {
+		color: white;
+	}
+}
