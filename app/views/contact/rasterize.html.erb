@@ -1,8 +1,10 @@
 <%= stylesheet_link_tag "contact" %>
+<%= javascript_include_tag "contact" %>
 <div id="contactBox">
-	<form method="post">
-		<input type="text" name="email" id="email" placeholder="email"/>
-		<textarea name="message" id="message" placeholder="message"></textarea>
-		<input type="submit" id="submit" value="send" />
+	<form>
+		<input type="text" name="Field1" id="email" placeholder="email" maxlength="255" />
+		<textarea name="Field2" id="message" placeholder="message"></textarea>
+		<input type="hidden" id="idstamp" name="idstamp" value="4NsYQnPPw5AeWEC8BywG+jSakYHCdBjZgDWH2V02EvI=" />
+		<input type="button" id="submit" value="&#xf075;" onclick="return sendForm();"/>
 	</form>
 </div>

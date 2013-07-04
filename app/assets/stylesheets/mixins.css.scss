@@ -19,6 +19,35 @@ $pinkLemonade: #ff3333;
 	border-radius: $rad;
 }
 
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin animation($name, $time, $durationCount: 1) {
+    -webkit-animation: $name $time $durationCount; /* Safari 4+ */
+    -moz-animation:    $name $time $durationCount; /* Fx 5+ */
+    -o-animation:      $name $time $durationCount; /* Opera 12+ */
+    animation:         $name $time $durationCount;
+}
+
+@mixin animation-timing-function($type) {
+	-webkit-animation-timing-function: $type;
+	-moz-animation-timing-function: $type;
+	-o-animation-timing-function: $type;
+	animation-timing-function: $type;
+}
+
 @mixin placeholder-color($color) {
 	&::-webkit-input-placeholder { /* WebKit browsers */
 	    color:    $color;

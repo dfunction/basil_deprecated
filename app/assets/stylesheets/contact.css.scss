@@ -1,16 +1,54 @@
 @import "mixins";
 
+@font-face {
+    font-family: 'fontawesomeregular';
+    src: url('fontawesome-webfont.eot');
+    }
+
+@font-face {
+    font-family: 'fontawesomeregular';
+    src: url(data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAAVgAA8AAAAAB8AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABWAAAABwAAAAcZY4Sx0dERUYAAAF0AAAAHQAAACAAMwAET1MvMgAAAZQAAABAAAAAYI4vdsNjbWFwAAAB1AAAAFIAAAFi4Cz3j2N2dCAAAAIoAAAABAAAAAQARAURZ2FzcAAAAiwAAAAIAAAACAAAABBnbHlmAAACNAAAAOcAAADweG7/eWhlYWQAAAMcAAAALwAAADYDKJ4/aGhlYQAAA0wAAAAcAAAAJA7dBrpobXR4AAADaAAAABcAAAAYHycARGxvY2EAAAOAAAAADgAAAA4A0ACMbWF4cAAAA5AAAAAfAAAAIABKAFpuYW1lAAADsAAAAWkAAALMQUVj93Bvc3QAAAUcAAAAOQAAAE2DxGodd2ViZgAABVgAAAAGAAAABvnZUdQAAAABAAAAAMw9os8AAAAAy1XFoAAAAADN+qpXeNpjYGRgYOADYgkGEGBiYARCViBmAfMYAASBADgAAAB42mNgZuVjnMDAysDCasRyloGBYSaEZjrLkA7m4wQFlUXFDA4MvB9K2W7/u83AwHab0RcozIikRIGBEQBy3gzseNpjYGBgZoBgGQZGBhCIAfIYwXwWBgcgzcPAwcAEZDMw8DIoPGD4UPr/P1gdgsf4/+v/xwos/BOgJsABIxsDXIiRCUgwMaApgFg9nAEAsFYOigAAAEQFEQABAAH//wAPeNpjYGJwYWBgSmENZWBmYGfQ28jIoG+ziZ2F4a3RRjbWOzabmJmATIaNzCBhVpDwJnY2xj82mxhB4saCioKqioKKLkwK/1QYZ/zLYA39tdqF5SwDAwMjAxIwBPP/3eZgYN3OoAHkiPAxsSgrqbOxsrGzqambmqnZMZnbsZqrMZmaCOkwGiuwMHAwpO/7/e/48tDAR/+u2rsIK7AwMnOzCDCxW4oZSCvxbjm3iFGIseYCoxjjDUYhptvlDza3e3Ge9BbkZJISYeThEGYTYuawk3IwDdJLZ9RaPYWR/2jJkX/rGQBC0Tc4AHjaY2BkYGAA4shrX3jj+W2+MshzMIDA2V+rIhD0v9scDKzbgVwOBiaQKABYWQwyAHjaY2BkYGC7/W8zAwMHAwgASUYGVMAGAE8eAqt42mN6w+DCwcDAAMJMIGwNYQMAHhUBigAAAAAsACwALAAsADQAeAAAeNpjYGRgYGBj0GRgYgABEMnIABJzYNADCQAAB/AApQB42nVSS04CQRB9A4iSEFeGuOywcElGdGHY4QejMUpwom6ZHxh1xswAho2nMB6As7jQO3gCVx7B1zXNR4OZdNerrqpXVS8DoIxX5GEVSgCeeTJsoUIvwzms48XgPKqYGFzAFt4MXuH7l8FFVKyywauYWFWD17BpTfNL2LA+DX5n/rfBH7BzRRwgxiPGSHCLHvoYQKEOG9vYIWrCZ9xFQHzJrJTxAA+0CieI4DGasF7fXYn5qEndPT+1wJqKF9AGtCOT2WJlxGgTTxKLyR2gw9PDkAxd5rZwgXM4OGPWPhr0HL4d4QZt4o54y1jUH54r6ZxyIp2tuGGNe9qzfev/8LRZH5AhFU69QyhMipmx3H2JLFNS13hE056hKDWvCU1H/aIV9EVdPe0d37SiA+FzucWcJaLVnidTZiomwvJ78kMyjKTPMVFE9jGu6bsLfTMVHM4zpHcqail+uzxanQZ12eNt8579GT9MTm50AAAAeNpjYGIAg//pDGkM2AAbAwMjEyMzAzMjCyMrW3pOZUGGIXtpXqaBgYELiHYFMkC0m4G5KQAS/QrJAAAAAAFR1PnYAAA=) format('woff'),
+         url('fontawesome-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+$fontSize: 24px;
+
+@include keyframes(pop) {
+  0% {
+    font-size: $fontSize;
+	@include animation-timing-function(linear);
+  }
+  60% {
+    font-size: $fontSize + 8px;
+	@include animation-timing-function(ease-in);
+  }
+  100% {
+    font-size: $fontSize + 5px;
+	@include animation-timing-function(ease-in-out);
+  }
+}
+
 #contactBox {
 	margin: auto;
 	width: 360px;
+	min-height: 544px; // top and bottom margins are 90px
+}
+
+form {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -182px 0 0 -180px;
 }
 
 input, textarea {
+	resize: none;
 	cursor: pointer;
 	display: block;
-	height: 32px;
 	width: 360px;
-	font-size: 14px;
 	margin-bottom: 0px;
 	border: none;
 	outline: none;
@@ -19,23 +57,41 @@ input, textarea {
 	font-size: 18px;
 
 	@include antialias;
+	@include borderbox;
 
-	&[type='submit'] {
-		background: white;
-		color: $lightBlack;
-		width: 400px;
+	&[id='submit'] {
+
+		$diameter: 50px;
+
+		transition: font-size .15s;
+		-webkit-transition: font-size .15s;
+
+		background: $pinkLemonade;
+		width: $diameter;
+		height: $diameter;
+		padding: 0;
+		margin: 30px auto 0 auto;
+		font-size: $fontSize;
+		font-family: 'fontawesomeregular';
+		color: white;
+		line-height: $diameter;
+		text-align: center;
+
+		@include rounded-corners($diameter/2);
 
 		&:hover {
+			@include animation(pop, .20s);
+			font-size: $fontSize + 5px;
 		}
 	}
 
-	&[name='email'] {
+	&[id='email'] {
 		@include placeholder-color(white);
 		color: white;
 		background: $pinkLemonade;
 	}
 
-	&[name='message'] {
+	&[id='message'] {
 		@include placeholder-color(white);
 		color: white;
 		width: 360px;
