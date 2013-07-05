@@ -119,6 +119,16 @@ $tileBorder: 30px;
 	position: absolute;
 	bottom: $tileBorder;
 	width: 360px -  2*$tileBorder;
+
+	a {
+		color: white;
+		text-decoration: none;
+		font-style: italic;
+
+		&:hover {
+			border-bottom: 2px solid lighten($pinkLemonade, 10%);
+		}
+	}
 }
 
 .detailImage {

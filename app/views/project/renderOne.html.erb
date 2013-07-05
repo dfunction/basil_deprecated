@@ -15,7 +15,7 @@
 		<div class="detailsCol">
 			<div class="detail" id="detailDescription">
 				<div class="detailTitle">Description</div>
-				<div class="detailText"><%= @project.longDescription %></div>
+				<div class="detailText"><%= @project.longDescription.html_safe %></div>
 			</div>
 			<div class="detail" id="detailTechnologies">
 				<div class="detailTitle">Technologies</div>
