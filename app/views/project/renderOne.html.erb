@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag "projects" %>
+<%= stylesheet_link_tag "project" %>
 <%= javascript_include_tag "project" %>
 <div class="projectBox">
 	<div class="notification" style="display: <%= @result? 'block' : 'none' %>">
@@ -8,19 +8,19 @@
 		<div class="projectTitle"><%= @project.title %></div>
 		<div class="projectYear">(<%= @project.year %>)</div>
 	</div>
-	<div class="projectDetails clearFix">
+	<div id="detailsRight">
+		<div class="detail" id="detailDescription">
+			<div class="detailTitle">Description</div>
+			<div class="detailText"><%= @project.longDescription.html_safe %></div>
+		</div>
+		<div class="detail" id="detailTechnologies">
+			<div class="detailTitle">Technologies</div>
+			<div class="detailText"><%= @project.technologies %></div>
+		</div>
+	</div>
+	<div id="detailsLeft">
 		<% for @picture in @pictures %>
 		<div class="detailImage"><img src="<%= @picture.url %>" /></div>
 		<% end %>
-		<div class="detailsCol">
-			<div class="detail" id="detailDescription">
-				<div class="detailTitle">Description</div>
-				<div class="detailText"><%= @project.longDescription.html_safe %></div>
-			</div>
-			<div class="detail" id="detailTechnologies">
-				<div class="detailTitle">Technologies</div>
-				<div class="detailText"><%= @project.technologies %></div>
-			</div>
-		</div>
 	</div>
 </div>

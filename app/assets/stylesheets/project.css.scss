@@ -1,0 +1,120 @@
+@import "mixins";
+
+$tileBorder: 30px;
+
+.projectBox {
+	background: white;
+	width: 960px;
+	margin: 0 auto;
+}
+
+.notification {
+	margin: 50px auto 0 auto;
+	height: 50px;
+	line-height: 50px;
+	font-size: 16px;
+	font-color: $darkAqua;
+	text-align: center;
+	border: 3px solid $darkAqua;
+	background: lighten($darkAqua, 50%);
+	cursor: pointer;
+	@include rounded-corners;
+}
+
+.projectTitle {
+	font-size: 30px;
+	font-weight: 300;
+	line-height: 120px;
+	height: 120px;
+	display: inline-block;
+	margin-left: 20px;	// alignment issues with the header
+	@include antialias;
+}
+
+.projectYear {
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 120px;
+	height: 120px;
+	display: inline-block;
+	@include antialias;
+}
+
+#detailsRight {
+	width: 360px;
+	height: 400px;
+	margin-left: 600px;
+    position: fixed;
+	color: white;
+    pointer-events: none;
+    
+    @include antialias;
+}
+
+.detail {
+	width: 360px;
+	padding: $tileBorder;
+	position: relative;
+	@include borderbox;
+}
+
+.detailTitle {
+	font-size: 18px;
+}
+
+.detailText {
+	font-size: 14px;
+	position: absolute;
+	bottom: $tileBorder;
+	width: 360px -  2*$tileBorder;
+
+	a {
+		color: white;
+		text-decoration: none;
+		font-style: italic;
+        pointer-events: all;
+		&:hover {
+    		text-decoration: none;
+			border-bottom: 2px solid lighten($pinkLemonade, 10%);
+		}
+        &:visited {
+    		text-decoration: none;
+        }
+        &:active {
+    		text-decoration: none;
+        }
+	}
+}
+
+#detailsLeft {
+    width: 600px;
+}
+
+.detailImage {
+	width: 600px;
+	height: 400px;
+	overflow: hidden;
+	margin-bottom: 100px;
+}
+
+#detailDescription {
+	background: $pinkLemonade;
+	height: 225px;
+}
+
+#detailTechnologies {
+	background: $lightBlack;
+	height: 175px;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    margin-left: -(960px/2);
+    background: white;
+}
+
+#content {
+    margin-top: 97px;
+}
