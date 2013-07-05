@@ -1,18 +1,29 @@
 require 'securerandom'
 
 class ProjectController < ApplicationController
+  before_filter :check_access, :only => [:renderCreatePage, :createAction]
+  
+  def check_access
+      raise ActionController::RoutingError.new("404 Not Found") unless user_signed_in?
+  end
+
   def renderAll
     render :renderAll
   end
+  
   def renderOne
     @project = Project.find(params[:id])
     @result = params[:result]
     @pictures = @project.project_picture.where(:is_thumb => false)
     render :renderOne
   end
+  
+  # filtered
   def renderCreatePage
-    render :createPage
+      render :createPage
   end
+
+  # filtered
   def createAction
     ## Creates new project
     # Todo:
