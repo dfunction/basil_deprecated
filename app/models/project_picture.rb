@@ -1,4 +1,4 @@
-require 'UUIDTools'
+require 'uuidtools'
 
 class ProjectPicture < ActiveRecord::Base
   attr_accessible :project, :url, :is_thumb
