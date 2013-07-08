@@ -3,7 +3,7 @@
 @font-face {
     font-family: 'fontawesomeregular';
     src: url('fontawesome-webfont.eot');
-    }
+}
 
 @font-face {
     font-family: 'fontawesomeregular';
@@ -15,49 +15,50 @@
 }
 
 $fontSize: 24px;
+$contactWidth: 360px;
 
 @include keyframes(pop) {
-  0% {
-    font-size: $fontSize;
-	@include animation-timing-function(linear);
-  }
-  60% {
-    font-size: $fontSize + 8px;
-	@include animation-timing-function(ease-in);
-  }
-  100% {
-    font-size: $fontSize + 5px;
-	@include animation-timing-function(ease-in-out);
-  }
+	0% {
+		font-size: $fontSize;
+		@include animation-timing-function(linear);
+	}
+	60% {
+		font-size: $fontSize + 8px;
+		@include animation-timing-function(ease-in);
+	}
+	100% {
+		font-size: $fontSize + 5px;
+		@include animation-timing-function(ease-in-out);
+	}
 }
 
-#contactBox {
-	margin: auto;
-	width: 360px;
-	min-height: 544px; // top and bottom margins are 90px
+#contactContainer {
+	margin: 0 auto;
+	width: $contactWidth;
 }
 
 form {
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	margin: -182px 0 0 -180px;
+	margin: -200px 0 0 (-($contactWidth/2));
 }
 
 input, textarea {
 	resize: none;
 	cursor: pointer;
 	display: block;
-	width: 360px;
+	width: $contactWidth;
 	margin-bottom: 0px;
 	border: none;
 	outline: none;
 	color: white;
 	padding: 30px;
 	font-size: 18px;
-
+	-webkit-appearance: none;
 	@include antialias;
 	@include borderbox;
+	@include rounded-corners(0);
 
 	&[id='submit'] {
 
@@ -70,33 +71,32 @@ input, textarea {
 		width: $diameter;
 		height: $diameter;
 		padding: 0;
-		margin: 30px auto 0 auto;
+		margin: 30px auto 30px auto;
 		font-size: $fontSize;
 		font-family: 'fontawesomeregular';
 		color: white;
 		line-height: $diameter;
 		text-align: center;
-
 		@include rounded-corners($diameter/2);
 
 		&:hover {
-			@include animation(pop, .20s);
 			font-size: $fontSize + 5px;
+			@include animation(pop, .20s);
 		}
 	}
 
 	&[id='email'] {
-		@include placeholder-color(white);
 		color: white;
 		background: $pinkLemonade;
+		@include placeholder-color(white);
 	}
 
 	&[id='message'] {
-		@include placeholder-color(white);
 		color: white;
-		width: 360px;
+		width: $contactWidth;
 		height: 200px;
 		background: $lightBlack;
+		@include placeholder-color(white);
 	}
 
 	&:focus {

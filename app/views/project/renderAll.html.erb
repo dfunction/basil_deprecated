@@ -1,6 +1,6 @@
 <%= stylesheet_link_tag "projects" %>
 <%= javascript_include_tag "allProjects" %>
-<div id="projectTiles" class="clearFix">
+<div id="projectTilesContainer" class="clearFix">
 	<% Project.all().each do |project| %>
 	<%
 	if (thumb = project.project_picture.where(:is_thumb => true)).length > 0

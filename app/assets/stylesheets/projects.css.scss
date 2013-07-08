@@ -1,18 +1,21 @@
 @import "mixins";
 
 $tileBorder: 30px;
+$tileSize: 250px;
 
-#projectTiles {
-	margin: 90px auto 0 auto;
+#projectTilesContainer {
+	display: block;
+	margin: $gHeaderHeight+$gHeaderOffset auto 0 auto;	// looks weird because of CSS margin collapse
+	overflow: hidden;
 }
 
 .projectTile {
 	float: left;
 	position: relative;
-	width: 250px;
-	height: 250px;
+	width: $tileSize;
+	height: $tileSize;
 	padding: 0;
-	background: grey;
+	background: gray;
 	overflow: hidden;
 
 	&:hover {
@@ -28,7 +31,7 @@ $tileBorder: 30px;
 	width: 100%;
 	height: 100%;
 	background: $pinkLemonade;
-	color: #fff;
+	color: white;
 	padding: $tileBorder;
 	@include borderbox;
 	@include antialias;
@@ -46,5 +49,5 @@ $tileBorder: 30px;
 	font-size: 14px;
 	position: absolute;
 	bottom: $tileBorder;
-	width: 250px -  2*$tileBorder;
+	width: $tileSize - 2*$tileBorder;
 }

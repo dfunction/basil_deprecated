@@ -1,8 +1,16 @@
+// Global Colors
 $darkGrey: #cccccc;
 $lightBlack: #333333;
 $darkAqua: #339999;
 $pinkLemonade: #ff3333;
 
+// Global Values
+$gMinWidth: 960px;
+$gHeaderHeight: 100px;
+$gFooterHeight: 50px;
+$gHeaderOffset: 50px;
+
+// Global Mixins
 @mixin antialias {
 	-webkit-font-smoothing: antialiased;
 }
@@ -18,47 +26,43 @@ $pinkLemonade: #ff3333;
 	-ms-border-radius: $rad;
 	border-radius: $rad;
 }
-
 @mixin keyframes($name) {
-  @-webkit-keyframes #{$name} {
-    @content;
-  }
-  @-moz-keyframes #{$name} {
-    @content;
-  }
-  @-ms-keyframes #{$name} {
-    @content;
-  }
-  @keyframes #{$name} {
-    @content;
-  }
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+	@-moz-keyframes #{$name} {
+		@content;
+	}
+	@-ms-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	}
 }
-
 @mixin animation($name, $time, $durationCount: 1) {
-    -webkit-animation: $name $time $durationCount; /* Safari 4+ */
-    -moz-animation:    $name $time $durationCount; /* Fx 5+ */
-    -o-animation:      $name $time $durationCount; /* Opera 12+ */
-    animation:         $name $time $durationCount;
+	-webkit-animation: $name $time $durationCount; /* Safari 4+ */
+	-moz-animation:    $name $time $durationCount; /* Fx 5+ */
+	-o-animation:      $name $time $durationCount; /* Opera 12+ */
+	animation:         $name $time $durationCount;
 }
-
 @mixin animation-timing-function($type) {
 	-webkit-animation-timing-function: $type;
 	-moz-animation-timing-function: $type;
 	-o-animation-timing-function: $type;
 	animation-timing-function: $type;
 }
-
 @mixin placeholder-color($color) {
 	&::-webkit-input-placeholder { /* WebKit browsers */
-	    color:    $color;
+	    color: $color;
 	}
 	&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-	    color:    $color;
+	    color: $color;
 	}
 	&::-moz-placeholder { /* Mozilla Firefox 19+ */
-	    color:    $color;
+	    color: $color;
 	}
 	&:-ms-input-placeholder { /* Internet Explorer 10+ */
-	    color:    $color;
+	    color: $color;
 	}
 }

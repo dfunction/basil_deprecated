@@ -2,93 +2,99 @@
  *= require normalize
  */
 
+$headerPaddingTop: 35px;
+$headerPaddingBottom: 20px;
+
 @import "mixins";
 
-/* Clear Fix */
-/* For modern browsers */
+// Clear Fix
+
+// Modern Browsers
 .clearFix:before,
 .clearFix:after {
-    content:"";
-    display:table;
+	content: "";
+    display: table;
 }
 .clearFix:after {
-    clear:both;
+    clear: both;
 }
-/* For IE 6/7 (trigger hasLayout) */
+// For IE 6/7 (trigger hasLayout)
 .clearFix {
-    zoom:1;
+    zoom: 1;
 }
 
-/* Main styles */
+// Main styles
 
 html, body {
-	font-family: "Open Sans";
-	min-width: 960px;
+	font-family: "Open Sans", sans-serif;
+	min-width: $gMinWidth;
 	overflow-x: hidden;
 	height: 100%;
 }
 
 #wrapper {
-	min-width: 960px;
-	min-height: 100%;
+	min-width: $gMinWidth;
 	position: relative;
 }
 
 #header {
-	width: 960px;
-	height: 42px;
-	padding: 35px 0 20px 0;
-	margin: 0 auto 0 auto;
+	width: $gMinWidth;
+	height: $gHeaderHeight;
+	padding: $headerPaddingTop 0 $headerPaddingBottom 0;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    margin-left: -($gMinWidth/2);
 	background: rgba(255,255,255,0.9);
 	border-bottom: 1px solid white;
+	z-index: 2;
+	@include borderbox;
 
 	img {
 		margin-left: 15px;
+		width: 144px;
+		height: 42px;
 	}
 }
 
 #nav {
-	height: 42px;
+	height: $gHeaderHeight - ($headerPaddingTop + $headerPaddingBottom);
 	float: right;
 	display: inline-block;
 }
 
 .navItem {
 	display: inline-block;
-	line-height: 42px;
+	line-height: $gHeaderHeight - ($headerPaddingTop + $headerPaddingBottom);
 	margin: 0 15px;
 	color: $lightBlack;
 	font-size: 14px;
 	font-weight: 700;
 	@include antialias;
 
-
 	a {
 		text-decoration: none;
 		color: inherit;
-
-
 		&:hover {
 			border-bottom: 2px solid $darkGrey;
 		}
-
 	}
 }
 
 #content {
-	padding: 0px;
-	padding-bottom: 50px;
+	display: block;
+	margin-top: $gHeaderHeight;
+	padding: 0 0 $gFooterHeight 0;
 }
 
 #footer {
-	font-size: 10px;
-	line-height: 50px;
-	color: $lightBlack;
-	font-weight: 300;
+	height: $gFooterHeight;
+	width: 100%;
 	position: absolute;
 	bottom: 0;
-	height: 50px;
-	width: 100%;
+	font-size: 10px;
+	line-height: $gFooterHeight;
+	font-weight: 300;
+	color: $lightBlack;
 	text-align: center;
 }
-

@@ -13,7 +13,6 @@ label {
 	font-weight: bold;
 	text-transform: uppercase;
 	text-align: right;
-	
 	@include antialias;
 }
 
@@ -29,29 +28,29 @@ input, textarea {
 	background: #f0f0f0;
 	color: $lightBlack;
 	padding: 7px;
-	
+	-webkit-appearance: none;
 	@include antialias;
 	@include rounded-corners(5px);
 	@include borderbox;
-	
+
 	&[type='reset'] {
 		margin-left: 20px + 150px;
 		background: red;
 		color: white;
 		width: 75px;
 		display: inline-block;
-		
+
 		&:hover {
 			background: $lightBlack;
 		}
 	}
-	
+
 	&[type='submit'] {
 		background: $darkAqua;
 		color: white;
 		width: 220px;
 		display: inline-block;
-		
+
 		&:hover {
 			background: $lightBlack;
 		}

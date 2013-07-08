@@ -7,3 +7,19 @@ function sendForm () {
 		}
 	).always(function() { window.location = "/"; });
 }
+
+$(function() {
+	var headerHeight = $("#header").outerHeight(true);
+	var footerHeight = $("#footer").outerHeight(true);
+
+	$(window).resize(function() {
+		var calculatedHeight = $(window).height() - headerHeight - footerHeight;
+		var contactHeight = $("#contactContainer form").height();
+	    $("#contactContainer").height((calculatedHeight < contactHeight ? contactHeight : calculatedHeight));
+		return;
+	});
+
+	$("#contactContainer").height($(window).height() - headerHeight - footerHeight);
+
+	return;
+});

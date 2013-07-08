@@ -1,10 +1,13 @@
 @import "mixins";
 
 $tileBorder: 30px;
+$widthLeft: 600px;
+$widthRight: 960px - $widthLeft;
+$detailsHeight: 400px;
 
-.projectBox {
+.projectContainer {
 	background: white;
-	width: 960px;
+	width: $gMinWidth;
 	margin: 0 auto;
 }
 
@@ -41,9 +44,9 @@ $tileBorder: 30px;
 }
 
 #detailsRight {
-	width: 360px;
-	height: 400px;
-	margin-left: 600px;
+	width: $widthRight;
+	height: $detailsHeight;
+	margin-left: $widthLeft;
     position: fixed;
 	color: white;
     pointer-events: none;
@@ -52,7 +55,7 @@ $tileBorder: 30px;
 }
 
 .detail {
-	width: 360px;
+	width: $widthRight;
 	padding: $tileBorder;
 	position: relative;
 	@include borderbox;
@@ -66,7 +69,7 @@ $tileBorder: 30px;
 	font-size: 14px;
 	position: absolute;
 	bottom: $tileBorder;
-	width: 360px -  2*$tileBorder;
+	width: $widthRight -  2*$tileBorder;
 
 	a {
 		color: white;
@@ -87,12 +90,13 @@ $tileBorder: 30px;
 }
 
 #detailsLeft {
-    width: 600px;
+    width: $widthLeft;
+	margin-bottom: 100px;
 }
 
 .detailImage {
-	width: 600px;
-	height: 400px;
+	width: $widthLeft;
+	height: $detailsHeight;
 	overflow: hidden;
 	margin-bottom: 100px;
 }
@@ -105,15 +109,4 @@ $tileBorder: 30px;
 #detailTechnologies {
 	background: $lightBlack;
 	height: 175px;
-}
-
-#header {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    margin-left: -(960px/2);
-}
-
-#content {
-    margin-top: 97px;
 }

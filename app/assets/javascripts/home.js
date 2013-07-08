@@ -4,7 +4,8 @@ $(function() {
 
 	$(window).resize(function() {
 		var calculatedHeight = $(window).height() - headerHeight - footerHeight;
-	    $("#heroTextContainer").height((calculatedHeight < $("#heroText").height() ? $("#heroText").height() : calculatedHeight));
+		var heroTextHeight = $("#heroText").height();
+	    $("#heroTextContainer").height((calculatedHeight < heroTextHeight ? heroTextHeight : calculatedHeight));
 		return;
 	});
 
