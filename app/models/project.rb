@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  attr_accessible :longDescription, :shortDescription, :technologies, :title, :year
+  attr_accessible :longDescription, :shortDescription, :technologies, :title, :year, :shortname
   has_many :project_picture
 
   validates :longDescription, :presence => true
@@ -7,4 +7,5 @@ class Project < ActiveRecord::Base
   validates :technologies, :presence => true
   validates :title, :presence => true
   validates :year, :presence => true
+  validates :shortname, :presence => true, :uniqueness => true
 end

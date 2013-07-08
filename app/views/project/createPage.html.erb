@@ -6,6 +6,7 @@
 	<form method="post" enctype="multipart/form-data">
 		<input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> />
 		<label for="title">Title</label><input type="text" name="title" id="title" maxlength="255" />
+		<label for="shortname">Shortname</label><input type="text" name="shortname" id="shortname" maxlength="255" />
 		<label for="year">Year</label><input type="text" name="year" id="year" maxlength="4" />
 		<label for="shortDescription">Short Description</label><textarea name="shortDescription" id="shortDescription"></textarea>
 		<label for="longDescription">Long Description</label><textarea name="longDescription" id="longDescription"></textarea>

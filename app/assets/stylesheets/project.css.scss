@@ -47,7 +47,7 @@ $tileBorder: 30px;
     position: fixed;
 	color: white;
     pointer-events: none;
-    
+
     @include antialias;
 }
 
@@ -112,7 +112,6 @@ $tileBorder: 30px;
     top: 0;
     left: 50%;
     margin-left: -(960px/2);
-    background: white;
 }
 
 #content {

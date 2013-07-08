@@ -9,7 +9,7 @@ Basil::Application.routes.draw do
   post "projects/new" => "project#createAction"
   match "/contact"    => "contact#rasterize"
   match "/projects" => "project#renderAll"
-  match "/projects/:id" => "project#renderOne"
+  match "/projects/:shortname" => "project#renderOne"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
